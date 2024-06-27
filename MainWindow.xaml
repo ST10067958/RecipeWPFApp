@@ -1,0 +1,84 @@
+﻿<Window x:Class=" RecipeWPFApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Recipe Notes Manager" Height="600" Width="949"
+        Background="#f5f5f5">
+
+    <Window.Resources>
+        <Style x:Key="HeaderStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0 20"/>
+        </Style>
+
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#4CAF50"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="10 5"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="MinWidth" Value="120"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="MinWidth" Value="200"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#CCCCCC"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="0,20,10,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="38*"/>
+            <ColumnDefinition Width="901*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="/Images/Health Tips_ Best foods for your Body.jpg" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" 
+               Width="620" 
+               Height="369" 
+               Margin="239,91,0,0" Grid.Row="1" Grid.Column="1"/>
+
+        <!-- Header -->
+        <Label Grid.Row="0" Content="Recipe Notes Manager" Style="{StaticResource HeaderStyle}" Grid.Column="1" HorizontalAlignment="Left" Margin="299,20,0,20"/>
+
+        <!-- Buttons Panel -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="14,0,0,0">
+            <Button Content="Add Recipe" Style="{StaticResource ButtonStyle}" Click="btnAddRecipe_Click"/>
+            <Button Content="Filter Recipes" Style="{StaticResource ButtonStyle}" Click="btnListRecipes_Click" RenderTransformOrigin="0.522,0.568"/>
+            <Button Content="Reset Quantities" Style="{StaticResource ButtonStyle}" Click= "btnResetRecipe_Click"/>
+            <Button Content="List Recipes" Style="{StaticResource ButtonStyle}" Click="btnfilterRecipes_Click"/>
+            <Button Content="Delete Recipe" Style="{StaticResource ButtonStyle}" Click="btnDeleteRecipe_Click"/>
+            <Button Content="Clear All Data" Style="{StaticResource ButtonStyle}" Click="btnClearData_Click"/>
+            <Button Content="Exit" Style="{StaticResource ButtonStyle}" Click="btnExit_Click"/>
+
+        </StackPanel>
+    </Grid>
+</Window>
