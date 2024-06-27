@@ -39,7 +39,7 @@ Installation
 
 1.Clone the repository: 
 
-git clone https://github.com/yourusername/RecipeNotesManager.git 
+git clone https://github.com/ST10067958/RecipeWPFApp.git
 cd RecipeNotesManager 
 
 Replace "yourusername" in the clone command with your actual GitHub username. This README provides comprehensive instructions for installation, usage, error handling, opening in Visual Studio, and licensing. 
